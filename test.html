@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    <div id="pesquisa">
+        <div class="col">
+            <p id="p1">Wikipedia Viewer</p>
+            <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><span>Click here for a random article</span></a><br><br>
+            <input id="txt" type="text" name="campo"><br>
+            <span>Press Enter to Search</span>
+            <div id="lista">
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#txt').on("keypress", function (e) {
+                if (e.keyCode == 13) {
+                    var busca = $("#txt").val();
+                    var url = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&limit=10&search=" + busca + "&callback=?";
+
+                    $.getJSON(url, function (json) {
+                        var html = "";
+                        for (var i = 0; i < 10; i++) {
+                            html += json[1][i] + "<br>" + json[2][i];
+                            $("div#lista").append("<a href=" + json[3][i] + "><div>" + html + "</div></a>");
+                            html = "";
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

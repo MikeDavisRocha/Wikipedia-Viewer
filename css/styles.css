@@ -1,0 +1,50 @@
+body {
+  font-family: 'Lato', sans-serif;
+  color: rgb(233,233,233);
+  font-weight: 300;
+  background: #16222A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-size: 60px;
+}
+.selector-for-some-widget {
+box-sizing: content-box;
+}
+#txt {
+font-size: 20px;
+}
+p {
+font-size: 50px;
+}
+span {
+font-size: 20px;
+}
+div#pesquisa {
+margin: 0 auto;
+font-size: 10px;
+text-align: center;
+position: relative;
+top: 100px;
+display: flex;
+  flex-direction:column;
+}
+div#lista div {
+font-size: 15px;
+width: auto;
+height: auto;
+padding: 10px;
+background: #16222A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+margin: 20px;
+}
+div#lista a {
+ color: white;
+ text-decoration: none;
+}
+
+div#lista a div:hover {
+border: 5px solid #7d315b;
+}
